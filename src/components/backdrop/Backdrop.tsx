@@ -13,7 +13,7 @@ import {
 } from 'react-native-gesture-handler';
 
 // Components
-import { BlurView } from 'expo-blur';
+import {BlurView} from 'expo-blur';
 
 // Utils
 import {styles} from './styles';
@@ -124,6 +124,7 @@ const BackdropComponent = ({blur}: BackdropComponentProps) => {
   return (
     <TapGestureHandler onHandlerStateChange={tapGestureEvent}>
       <BackdropBlur
+        //@ts-ignore
         animatedProps={animatedContainerProps}
         style={[styles.container, animatedContainerStyle]}>
         <Animated.View

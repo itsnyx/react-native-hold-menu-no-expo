@@ -103,10 +103,6 @@ const HoldItemComponent = ({
   //#region functions
   const hapticResponse = () => {
     const style = !hapticFeedback ? 'Medium' : hapticFeedback;
-    const options = {
-      enableVibrateFallback: true,
-      ignoreAndroidSystemSettings: false,
-    };
     switch (style) {
       case `Selection`:
         Haptics.selectionAsync();
@@ -405,7 +401,7 @@ const HoldItemComponent = ({
           </LongPressGestureHandler>
         );
     }
-  }, [activateOn, gestureEvent]);
+  }, [activateOn, longPressMinDurationMs, gestureEvent]);
 
   const PortalOverlay = useMemo(() => {
     return () => (
