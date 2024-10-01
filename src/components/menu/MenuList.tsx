@@ -16,7 +16,7 @@ import {
   calculateMenuHeight,
   menuAnimationAnchor,
 } from '../../utils/calculations';
-import {BlurView} from '@react-native-community/blur';
+import { BlurView } from 'expo-blur';
 
 import MenuItems from './MenuItems';
 

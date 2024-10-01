@@ -26,7 +26,7 @@ import type {ViewProps} from 'react-native';
 //#region dependencies
 import {Portal} from '@gorhom/portal';
 import {nanoid} from 'nanoid/non-secure';
-import {trigger} from 'react-native-haptic-feedback';
+import * as Haptics from 'expo-haptics';
 //#endregion
 
 //#region utils & types
@@ -109,17 +109,17 @@ const HoldItemComponent = ({
     };
     switch (style) {
       case `Selection`:
-        trigger('selection', options);
+        Haptics.selectionAsync();
         break;
       case `Light`:
       case `Medium`:
       case `Heavy`:
-        trigger(`impact${style}`, options);
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle[style]);
         break;
       case `Success`:
       case `Warning`:
       case `Error`:
-        trigger(`notification${style}`, options);
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType[style]);
         break;
       default:
     }

@@ -13,7 +13,7 @@ import {
 } from 'react-native-gesture-handler';
 
 // Components
-import {BlurView} from '@react-native-community/blur';
+import { BlurView } from 'expo-blur';
 
 // Utils
 import {styles} from './styles';
